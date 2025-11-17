@@ -1,0 +1,1279 @@
+/* Reset simple */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Paleta */
+:root{
+  --verde-oscuro: #0b1f1b;
+  --verde-fondo: #0f2d27;
+  --verde-btn: #3ca46b;
+  --dorado: #d4a64e;
+  --texto-claro: #ffffff;
+  --panel: #1a332c;
+}
+
+/* Body */
+body{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: var(--verde-fondo);
+  color: var(--texto-claro);
+  line-height: 1.4;
+}
+
+/* HEADER: CENTRADO */
+.site-header{
+  background: linear-gradient(180deg, rgba(11,31,27,1) 0%, rgba(14,40,34,1) 100%);
+  padding-top: 18px;
+  padding-bottom: 18px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+}
+
+/* agrupa logo+titulo+nav y los centra verticalmente en columna */
+.logo-area{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.logo-centered{
+  width: 110px; /* antes 110px */
+  height: auto;
+  display: block;
+  margin-top: 6px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+
+
+
+/* Título debajo del logo */
+.site-title {
+  font-family: "Playfair Display", serif;
+  color: #d4a64e !important;
+  font-size: 2.4rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Pequeña línea decorativa para separar título y nav */
+.logo-area::after{
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: var(--dorado);
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* NAV centrado y un poco separado debajo del título */
+.main-nav{
+  margin-top: 12px;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px 0 6px 0;
+}
+
+.main-nav a{
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  transition: color 0.18s, transform 0.18s;
+}
+
+.main-nav a:hover{ color: var(--dorado); transform: translateY(-2px); }
+.main-nav a.activo{ color: var(--dorado); }
+
+/* HERO */
+.hero{
+  position: relative;
+  background-image: url('../img/paisaje.jpg'); /* ruta relativa desde css/ hacia img/ */
+  background-size: cover;
+  background-position: center;
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+  padding: 50px 20px;
+  max-width: 1000px;
+}
+
+.hero-content h2{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+
+/* Botones */
+.botones{ display:flex; gap: 20px; justify-content:center; align-items:center; flex-wrap:wrap; }
+
+.btn{
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.btn-verde{ background: var(--verde-btn); color: #fff; }
+.btn-dorado{ background: var(--dorado); color: #0b1f1b; }
+
+.btn:hover{ opacity: 0.9; transform: translateY(-3px); }
+
+
+/* Ajuste del logo principal */
+.logo {
+  width: 250px !important; /* 🔹 Aumenta o reduce según necesites */
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+
+/* ==== SECCIÓN MENÚ ==== */
+.menu-lista {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 40px 60px;
+  background-color: #0f241d;
+  text-align: left; /* fuerza alineación */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjetas */
+.plato-card {
+  background-color: #132e24;
+  border-radius: 15px;
+  width: 260px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 auto; /* evita que se estiren o colapsen */
+  margin: 0; /* evita que hereden márgenes raros */
+}
+
+.plato-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.plato-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 3px solid #d4a017;
+}
+
+.plato-info {
+  padding: 15px;
+}
+
+.plato-info h4 {
+  margin: 10px 0 5px;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.plato-info p {
+  color: #ccc;
+  font-size: 0.9em;
+  min-height: 45px;
+}
+
+.precio {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: #d4a017;
+  color: #000;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+
+
+/* Footer */
+footer{
+  background: var(--verde-oscuro);
+  padding: 18px 10px;
+  text-align:center;
+  color: rgba(255,255,255,0.8);
+}
+
+.redes img{ width:24px; margin:0 6px; vertical-align:middle; }
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .site-title{ font-size:1.6rem; }
+  .logo-centered{ width:92px; }
+  .hero-content h2{ font-size:2rem; }
+  .main-nav{ gap:14px; }
+}
+
+@media (max-width:520px){
+  .logo-centered{ width:78px; }
+  .site-title{ font-size:1.2rem; }
+  .hero-content h2{ font-size:1.6rem; }
+  .btn{ min-width: 140px; padding:10px 18px; }
+  .plato{ width: 46%; }
+}
+
+.logo-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.logo-section h1 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.navbar {
+  text-align: center;
+  background-color: #0d1e18;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #d4a017;
+}
+
+.hero {
+  position: relative;
+  height: 80vh;
+  background-image: url('../img/paisaje.jpg'); /* cambia el nombre si tu imagen tiene otro */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-verde {
+  background-color: #3bb273;
+  color: #fff;
+}
+
+.btn-verde:hover {
+  background-color: #34a065;
+}
+
+.btn-dorado {
+  background-color: #d4a017;
+  color: #fff;
+}
+
+.btn-dorado:hover {
+  background-color: #bf8d12;
+}
+
+
+
+/* ===== Página de Menú ===== */
+.menu-header {
+    text-align: center;
+    padding: 120px 20px 40px;
+    background-color: #0d2e26;
+    color: #fff;
+}
+
+.menu-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #e3b341;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+/* Botones de filtro */
+.menu-categorias {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.filtro-btn {
+    background-color: #25473f;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background-color: #e3b341;
+    color: #1b1b1b;
+}
+
+/* Lista de platos */
+.menu-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 8%;
+    background-color: #1b3b32;
+}
+
+.plato-card {
+    background-color: #25473f;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.plato-card:hover {
+    transform: translateY(-5px);
+}
+
+.plato-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.plato-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: #e3b341;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.plato-card p {
+    color: #ddd;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: inline-block;
+    background-color: #e3b341;
+    color: #1b1b1b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+/* ===== Página de Reservaciones ===== */
+.reserva-header {
+    text-align: center;
+    padding: 120px 20px 40px;
+    background-color: #0d2e26;
+    color: #fff;
+}
+
+.reserva-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e3b341;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.reserva-header p {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.form-reserva {
+    background-color: #1b3b32;
+    padding: 60px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: #25473f;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.campo, .campo-doble div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #e3b341;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f4f4f4;
+}
+
+.campo-doble {
+    display: flex;
+    gap: 15px;
+}
+
+button.btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.exito {
+    text-align: center;
+    margin-top: 15px;
+    color: #4aa365;
+    font-weight: bold;
+    display: none;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .campo-doble {
+        flex-direction: column;
+    }
+}
+
+/* ====== Buscador ====== */
+.busqueda-reserva {
+  background: #f4f4f4;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: center;
+}
+.busqueda-form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.busqueda-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #0d2e26;
+}
+
+/* ====== Cuadrícula de Mesas ====== */
+.mesas-disponibles {
+  background-color: #0d2e26;
+  color: #fff;
+  padding: 40px 8%;
+  text-align: center;
+}
+
+.contenedor-mesas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.mesa {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.mesa.libre {
+  background-color: #fff;
+  color: #0d2e26;
+}
+.mesa.ocupada {
+  background-color: #a63b3b;
+  color: #fff;
+  cursor: not-allowed;
+}
+.mesa.seleccionada {
+  background-color: #4aa365;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ====== Formulario con animación ====== */
+.form-reserva {
+  background-color: #1b3b32;
+  padding: 40px 8%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.6s ease;
+}
+.oculto {
+  display: none;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+form {
+  background-color: #25473f;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+label {
+  color: #e3b341;
+  margin-bottom: 6px;
+}
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #e3b341;
+  color: #0d2e26;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #f4cb5d;
+}
+
+
+
+/* ===== Página de Galería ===== */
+.galeria-header {
+    text-align: center;
+    padding: 120px 20px 40px;
+    background-color: #0d2e26;
+    color: #fff;
+}
+
+.galeria-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e3b341;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.galeria-header p {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.galeria {
+    background-color: #1b3b32;
+    padding: 50px 8%;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* ===== Lightbox ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.4s ease;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+#cerrarLightbox {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#cerrarLightbox:hover {
+    color: #e3b341;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
+
+/* ===== CONTACTO ===== */
+.contact-header {
+  text-align: center;
+  padding: 100px 20px 40px;
+  background-color: #0d2e26;
+  color: #fff;
+}
+
+.contact-header h2 {
+  font-family: 'Playfair Display', serif;
+  color: #e3b341;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 8%;
+  background-color: #1b3b32;
+  gap: 40px;
+}
+
+.contact-info, .contact-form {
+  flex: 1 1 45%;
+  background-color: #23493e;
+  border-radius: 12px;
+  padding: 30px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.contact-info h3, .contact-form h3 {
+  color: #e3b341;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form .btn {
+  background-color: #e3b341;
+  color: #1b3b32;
+  font-weight: bold;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #caa02e;
+}
+
+.mensaje-confirmacion {
+  margin-top: 15px;
+  text-align: center;
+  color: #e3b341;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    flex-direction: column;
+  }
+}
+
+/* ===== NOSOTROS ===== */
+.nosotros-header {
+  text-align: center;
+  padding: 100px 20px 40px;
+  background-color: #0d2e26;
+  color: #fff;
+}
+
+.nombre-restaurante{
+  font-family: "Playfair Display", serif;
+  color: #d4a64e !important;
+  font-size: 2.4rem;
+}
+.nosotros-header h2 {
+  font-family: 'Playfair Display', serif;
+  color: #e3b341;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.nosotros-header p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* ===== Historia ===== */
+.nosotros-section {
+  background-color: #1b3b32;
+  padding: 60px 8%;
+}
+
+.nosotros-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.nosotros-img {
+  flex: 1 1 45%;
+  border-radius: 12px;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.nosotros-text {
+  flex: 1 1 45%;
+  color: #fff;
+}
+
+.nosotros-text h3 {
+  color: #e3b341;
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+/* ===== Misión y Visión ===== */
+.nosotros-mv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #23493e;
+  padding: 60px 8%;
+  gap: 30px;
+}
+
+.mv-card {
+  flex: 1 1 300px;
+  background-color: #1b3b32;
+  border-radius: 12px;
+  padding: 25px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+}
+
+.mv-card h3 {
+  color: #e3b341;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===== Equipo ===== */
+.equipo {
+  text-align: center;
+  background-color: #1b3b32;
+  padding: 60px 8%;
+}
+
+.equipo h3 {
+  color: #e3b341;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.equipo-card {
+  background-color: #23493e;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.equipo-card:hover {
+  transform: scale(1.05);
+}
+
+.equipo-card img {
+  width: 100%;
+  height: 230px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.equipo-card h4 {
+  color: #e3b341;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
+  .nosotros-content {
+    flex-direction: column;
+  }
+}
+/* ====== Diseño de las Mesas ====== */
+.contenedor-mesas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.mesa {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0d2e26;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.mesa.libre {
+  background-color: #fff;
+}
+
+.mesa.ocupada {
+  background-color: #b94a48;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.mesa.seleccionada {
+  background-color: #3aa76d;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ====== Formulario Animado ====== */
+.reserva-form {
+  display: none;
+  justify-content: center;
+  margin-top: 40px;
+  animation: aparecer 0.4s ease forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#formReserva {
+  background-color: #25473f;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+#formReserva h3 {
+  text-align: center;
+  color: #e3b341;
+  margin-bottom: 15px;
+}
+
+#formReserva label {
+  color: #e3b341;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+#formReserva input,
+#formReserva textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+  background: #f4f4f4;
+}
+
+#formReserva button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e3b341;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#formReserva button:hover {
+  background-color: #f5c64c;
+}
+.mensaje-exito {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.4rem;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
+  text-align: center;
+}
+.mensaje-exito.activo {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== Estilos del contenedor ===== */
+.reserva-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #002b26;
+  padding: 40px;
+}
+
+.reserva-card {
+  background: #08332e;
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #f4c542;
+  margin-bottom: 10px;
+}
+
+.subtexto {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #d1d1d1;
+}
+
+/* ===== Filtros ===== */
+.busqueda-reserva {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.busqueda-reserva label {
+  font-weight: bold;
+}
+
+.busqueda-reserva input,
+.busqueda-reserva select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.btn-yellow {
+  background: #f4c542;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-yellow:hover {
+  background: #ffdb70;
+  transform: scale(1.05);
+}
+
+/* ===== Mesas ===== */
+/* ===== HISTORIAL DE RESERVAS ===== */
+.historial-card {
+  margin-top: 40px;
+}
+
+.busqueda-historial {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.busqueda-historial input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.resultado-historial {
+  margin-top: 20px;
+}
+
+.lista-historial {
+  display: grid;
+  gap: 15px;
+}
+
+.tarjeta-reserva {
+  background-color: #fffbea;
+  border: 1px solid #f0d96f;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-reserva:hover {
+  transform: scale(1.02);
+}
+
+.tarjeta-reserva p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+.hist-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+/* Botón editar */
+.btn-edit {
+  background: #4dabf7;
+  color: white;
+}
+.btn-edit:hover {
+  background: #1c7ed6;
+}
+
+/* Botón eliminar */
+.btn-delete {
+  background: #f03e3e;
+  color: white;
+}
+.btn-delete:hover {
+  background: #c92a2a;
+}
+.mesa-card {
+    padding: 18px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+    border: 2px solid transparent;
+}
+
+.mesa-card:hover {
+    transform: scale(1.05);
+}
+
+.mesa-ocupada {
+    background: #b43b3b;
+    color: white;
+    cursor: not-allowed;
+    border-color: #7d2323;
+}
+
+.mesa-seleccionada {
+    border-color: #ffd166;
+    box-shadow: 0 0 10px #ffd166;
+}
+

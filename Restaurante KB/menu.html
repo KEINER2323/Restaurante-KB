@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Restaurante KM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+         <!-- ===== Navegación principal ===== -->
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo Restaurante KM" class="logo">
+      <span class="nombre-restaurante">Restaurante KM</span>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html" class="active">Menú</a>
+      <a href="reservaciones.html">Reservaciones</a>
+      <a href="galeria.html">Galería</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- ===== Header del Menú ===== -->
+    <header class="menu-header">
+        <h2>Descubre nuestros sabores</h2>
+        <p>Platos preparados con pasión y los mejores ingredientes de la región.</p>
+    </header>
+
+    <!-- ===== Sección de Categorías ===== -->
+    <section class="menu-categorias">
+        <button class="filtro-btn active" data-categoria="todos">Todos</button>
+        <button class="filtro-btn" data-categoria="carnes">Carnes</button>
+        <button class="filtro-btn" data-categoria="pescados">Pescados</button>
+        <button class="filtro-btn" data-categoria="sopas">Sopas</button>
+        <button class="filtro-btn" data-categoria="postres">Postres</button>
+    </section>
+
+    <!-- ===== Menú ===== -->
+    <main class="menu-lista">
+        <!-- Platos -->
+        <div class="plato-card" data-categoria="carnes">
+            <img src="img/pollo.jpg" alt="Pollo Campero">
+            <h4>Pollo Campero</h4>
+            <p>Jugoso pollo asado con especias de la casa, acompañado de vegetales frescos.</p>
+            <span class="precio">$25.000</span>
+        </div>
+
+        <div class="plato-card" data-categoria="pescados">
+            <img src="img/pescado.jpg" alt="Pescado del Río">
+            <h4>Pescado del Río</h4>
+            <p>Filete fresco de pescado del día, servido con puré de yuca y salsa criolla.</p>
+            <span class="precio">$30.000</span>
+        </div>
+
+        <div class="plato-card" data-categoria="sopas">
+            <img src="img/sopa.jpg" alt="Sopa del Viajero">
+            <h4>Sopa del Viajero</h4>
+            <p>Caldo tradicional con granos, verduras y carne suave, ideal para reconfortar.</p>
+            <span class="precio">$18.000</span>
+        </div>
+
+        <div class="plato-card" data-categoria="postres">
+            <img src="img/postre.jpg" alt="Postre de la Casa">
+            <h4>Postre de la Casa</h4>
+            <p>Deliciosa crema dulce con frutas frescas y toque artesanal.</p>
+            <span class="precio">$12.000</span>
+        </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="social">
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+        </div>
+        <p>© 2025 Restaurante KM. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
