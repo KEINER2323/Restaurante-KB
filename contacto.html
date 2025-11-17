@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Restaurante KM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+    <!-- ===== Navegación principal ===== -->
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo Restaurante KM" class="logo">
+      <span class="nombre-restaurante">Restaurante KM</span>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html" class="active">Menú</a>
+      <a href="reservaciones.html">Reservaciones</a>
+      <a href="galeria.html">Galería</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- ===== Encabezado ===== -->
+  <header class="contact-header">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas, sugerencias o deseas más información? Escríbenos y te responderemos pronto.</p>
+  </header>
+
+  <!-- ===== Sección de contacto ===== -->
+  <section class="contact-section">
+    <div class="contact-info">
+      <h3>Información</h3>
+      <p><strong>Dirección:</strong> Calle 45 #12-30, Bogotá, Colombia</p>
+      <p><strong>Teléfono:</strong> +57 320 456 7890</p>
+      <p><strong>Email:</strong> contacto@restaurantekm.com</p>
+      <p><strong>Horario:</strong> Lunes a Domingo 11:00 AM – 10:00 PM</p>
+
+      <div class="mapa">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.988792306522!2d-74.07209292507116!3d4.648283342077893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99c3aa6d9c1d%3A0x9b8573d50c88b8c!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" 
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Envíanos un mensaje</h3>
+      <form id="formContacto">
+        <input type="text" id="nombreContacto" placeholder="Tu nombre" required>
+        <input type="email" id="emailContacto" placeholder="Tu correo electrónico" required>
+        <textarea id="mensajeContacto" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <button type="submit" class="btn">Enviar mensaje</button>
+      </form>
+      <p id="mensajeConfirmacion" class="mensaje-confirmacion"></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="social">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
+    </div>
+    <p>© 2025 Restaurante KM. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
